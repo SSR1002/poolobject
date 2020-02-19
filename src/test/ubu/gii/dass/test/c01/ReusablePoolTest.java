@@ -9,17 +9,24 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import ubu.gii.dass.c01.Reusable;
+import ubu.gii.dass.c01.ReusablePool;
+
 /**
  * @author alumno
  *
  */
 public class ReusablePoolTest {
+	
+	public ReusablePool testReusablePool;
+	public Reusable testPrimerReusable, testSegundoReusable;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		this.testReusablePool = ReusablePool.getInstance();
 	}
 
 	/**
@@ -27,6 +34,9 @@ public class ReusablePoolTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		if(testPrimerReusable instanceof Reusable) 	this.testReusablePool.releaseReusable(testPrimerReusable);
+		if(testSegundoReusable instanceof Reusable) this.testReusablePool.releaseReusable(testSegundoReusable);
+		this.testReusablePool = null;
 	}
 
 	/**
