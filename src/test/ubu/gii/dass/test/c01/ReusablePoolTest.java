@@ -9,6 +9,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import ubu.gii.dass.c01.NotFreeInstanceException;
 import ubu.gii.dass.c01.Reusable;
 import ubu.gii.dass.c01.ReusablePool;
 
@@ -55,7 +56,22 @@ public class ReusablePoolTest {
 	 */
 	@Test
 	public void testAcquireReusable() {
-		fail("Not yet implemented");
+		Reusable testTercerReusable;
+		try {
+			this.testPrimerReusable  = this.testReusablePool.acquireReusable();
+			this.testSegundoReusable = this.testReusablePool.acquireReusable();
+			assertNotSame(this.testPrimerReusable,this.testSegundoReusable);
+			try {
+				testTercerReusable 	 = this.testReusablePool.acquireReusable();
+				fail("Debería haber ocurrido una excepción NotFreeInstanceException.");
+			}
+			catch(NotFreeInstanceException e) {}
+			catch(Exception e) {
+				fail("Excepción desconocida.");
+			}
+		} catch (Exception e) {
+			fail("Se ha lanzado una excepción cuando no debería.");
+		}
 	}
 
 	/**
