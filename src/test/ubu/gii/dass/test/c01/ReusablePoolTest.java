@@ -9,6 +9,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import ubu.gii.dass.c01.DuplicatedInstanceException;
 import ubu.gii.dass.c01.NotFreeInstanceException;
 import ubu.gii.dass.c01.Reusable;
 import ubu.gii.dass.c01.ReusablePool;
@@ -20,7 +21,7 @@ import ubu.gii.dass.c01.ReusablePool;
 public class ReusablePoolTest {
 	
 	public ReusablePool testReusablePool;
-	public Reusable testPrimerReusable, testSegundoReusable;
+	public Reusable testPrimerReusable, testSegundoReusable, ultimaPrueba=new Reusable();
 
 	/**
 	 * @throws java.lang.Exception
@@ -35,8 +36,6 @@ public class ReusablePoolTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		if(testPrimerReusable instanceof Reusable) 	this.testReusablePool.releaseReusable(testPrimerReusable);
-		if(testSegundoReusable instanceof Reusable) this.testReusablePool.releaseReusable(testSegundoReusable);
 		this.testReusablePool = null;
 	}
 
@@ -79,7 +78,19 @@ public class ReusablePoolTest {
 	 */
 	@Test
 	public void testReleaseReusable() {
-		fail("Not yet implemented");
+		try {
+			testReusablePool.releaseReusable(ultimaPrueba);
+			testReusablePool.releaseReusable(ultimaPrueba);
+			fail("Debería haber ocurrido una excepción DuplicatedInstanceException");
+		} catch (DuplicatedInstanceException e) {
+			try {
+				assertSame(this.testReusablePool.acquireReusable(),ultimaPrueba);
+			} catch (Exception e2) {
+				fail("Excepción desconocida.");
+			}
+		} catch (Exception e) {
+			fail("Excepción desconocida.");
+		}
 	}
 
 }
