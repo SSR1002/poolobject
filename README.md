@@ -33,3 +33,14 @@ Los pasos para gestionar el procesos son los siguientes:
 5. Cada nuevo test realizado ejecutar un commit/push al repositorio del grupo. El texto del commit tiene que describir el caso de prueba añadido.
 6. Verificar el resultado de las pruebas en el pipeline de integración continua y cómo la calidad del producto va mejorando con las sucesivas integraciones.
 
+## Preguntas
+
+> ¿Se ha realizado trabajo en equipo?
+
+En los ultimos commits del repositorio podemos ver que los commits de ambos participantes del equipo son frecuentes. En la descripcion de los commits podemos ver que cada participante trabajaba en un test diferente.
+
+
+> ¿Tiene calidad el conjunto de pruebas disponibles?
+
+En una primera instancia, hay una prueba para cada metodo publico de la clase, lo que es una buen indicador de calidad.
+Una vez completadas las pruebas, hemos obtenido un 100% en el recubrimiento de la clase. Las pruebas a completar nos han permitido probar toda la clase, por lo que podemos decir que es un conjunto de pruebas de calidad.
