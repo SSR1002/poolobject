@@ -44,3 +44,11 @@ En los ultimos commits del repositorio podemos ver que los commits de ambos part
 
 En una primera instancia, hay una prueba para cada metodo publico de la clase, lo que es una buen indicador de calidad.
 Una vez completadas las pruebas, hemos obtenido un 100% en el recubrimiento de la clase. Las pruebas a completar nos han permitido probar toda la clase, por lo que podemos decir que es un conjunto de pruebas de calidad.
+
+> ¿Cuál es el esfuerzo invertido en realizar la actividad?
+
+El esfuerzo invertido en la actividad ha sido de entre dos y tres horas.
+
+> ¿Cuál es el número de fallos encontrados en el código?
+
+No hemos encontrado ningún fallo en el código original.
