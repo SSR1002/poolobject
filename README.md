@@ -45,6 +45,9 @@ En los ultimos commits del repositorio podemos ver que los commits de ambos part
 En una primera instancia, hay una prueba para cada metodo publico de la clase, lo que es una buen indicador de calidad.
 Una vez completadas las pruebas, hemos obtenido un 100% en el recubrimiento de la clase. Las pruebas a completar nos han permitido probar toda la clase, por lo que podemos decir que es un conjunto de pruebas de calidad.
 
+<img src="https://codecov.io/gh/SSR1002/poolobject/branch/master/graphs/tree.svg">
+Cada bloque representa un fichero del proyecto. Podemos ver que el fichero que hemos probado esta coloreado de verde, lo que indica que tiene un recubrimiento del 100%.
+
 > ¿Cuál es el esfuerzo invertido en realizar la actividad?
 
 El esfuerzo invertido en la actividad ha sido de entre dos y tres horas.
